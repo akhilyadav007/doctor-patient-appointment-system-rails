@@ -1,0 +1,50 @@
+
+  <% if current_patient %>
+  Logged in as <%= current_patient.email %>.
+  <%= link_to 'LogOut', new_session_path %>
+  <% else %>
+  <%= link_to “Sign Up”, signup_path %> or 
+  <%= link_to “Log In”, login_path %>
+  <% end %>
+
+
+
+<h2>patients list</h2>
+
+<table border="1">
+<th>Patient_id</th>
+<th>Name</th>
+<th>Email</th>
+<th>Age</th>
+<th>Show Appointment</th>
+<th>Create Appointment</th>
+<th>Action</th>
+
+
+
+
+<% @patients.each do |patient| %>
+<tr>
+<% if session[:patient_id] == patient.id %>
+    <td><%= patient.id%></td>
+    <td><%= patient.name%></td>
+    <td><%= patient.email%></td>
+    <td><%= patient.age%></td>
+      <td><%= link_to 'show appointments',  patient_appointments_path(patient)%>
+      <td> <%= link_to 'create new appointments',  new_patient_appointment_path(patient) %></td>
+      <td><%= link_to 'edit', edit_patient_path(patient)%>
+      <%= link_to 'delete', patient_path(patient), method: :delete %></td>
+    <% end %>
+   
+</tr>
+<% end %>
+</table>
+
+
+
+<br>
+
+<br>
+
+
+

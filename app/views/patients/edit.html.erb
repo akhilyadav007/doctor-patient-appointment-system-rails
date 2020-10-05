@@ -1,0 +1,26 @@
+
+<%= form_for @patient do |form| %>
+    <p>
+      <%= form.label :name %><br>
+      <%= form.text_field :name %>
+    </p>
+    <p>
+      <%= form.label :email%>
+      <%= form.text_area :email %>
+    </p>
+    <p>
+      <%= form.label :age%>
+      <%= form.text_area :age%>
+    </p>
+
+    <p>
+    <%= form.label :password%>
+    <%= form.password_field :password%>
+  </p>
+    <p>
+      <%= form.submit %>
+    </p>
+    <% end %>
+    
+    <br>
+    <b>back to patients list <%= link_to 'back', root_path %></b>

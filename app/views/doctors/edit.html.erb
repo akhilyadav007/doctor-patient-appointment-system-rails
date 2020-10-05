@@ -1,0 +1,22 @@
+
+<%= form_for @doctor do |form| %>
+    <p>
+      <%= form.label :name %><br>
+      <%= form.text_field :name %>
+    </p>
+    <p>
+      <%= form.label :email%>
+      <%= form.text_area :email %>
+    </p>
+    <p>
+    <%= form.label :password %>
+    <%= form.password_field  :password %>
+  </p>
+      <%= form.submit %>
+    </p>
+    <% end %>
+    
+    <br>
+    <b>Back to the Doctors list <%= link_to 'click here ', doctors_path %></b>
+
+    

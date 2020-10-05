@@ -1,0 +1,28 @@
+<h1>Lets take an Appointment</h1>
+
+<%= form_for [@patient,@appointment] do |f| %>
+    
+    <p>
+      <%= f.label :select_Doctor %><br/>
+      
+      <%= f.select :doctor_id, doctor.map{|doc|  [ doc.name,doc.id]} %>
+    </p>
+
+    <p>
+      <%= f.label :patient_id %><br/>
+      <%= f.text_field :patient_id %>
+    </p>
+
+
+
+    <p>
+    <%= f.label :Appoinments_Date %> <br/>
+    <%= f.date_field :appoitmentdate %>
+  </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+   <% end %>
+<br>
+   <b>back to patients list <%= link_to 'back', root_path %></b>
